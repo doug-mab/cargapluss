@@ -1,3 +1,3 @@
-import storage from './storage';
+import storage from './api';
 
 export { storage };

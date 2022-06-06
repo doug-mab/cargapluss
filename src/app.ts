@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import * as routes from './routes';
 
@@ -18,6 +18,12 @@ class App {
 
   private routes() {
     this.app.use('/api', routes.storage);
+
+    this.app.use('*', (req: Request, res: Response) => {
+      return res
+        .status(404)
+        .send('<h2>Error 404</h2> The given path does not exist');
+    });
   }
 }
 
