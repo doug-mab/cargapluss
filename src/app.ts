@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import * as routes from './routes';
+import './models';
 
 class App {
   public readonly app = express();
